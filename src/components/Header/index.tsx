@@ -5,7 +5,6 @@ import React, { useState } from "react";
 export default function Header() {
   const [navSelected, setNavSelected] = useState("/");
 
-  /* bg-clip-text text-transparent  bg-gradient-to-br from-brand-100 from-39.49% to-[#A39EAC] to-86.77% */
   return (
     <header className="fixed top-0 left-0 border-box w-full h-20 bg-brand-header border-b border-[rgba(255, 255, 255, 0.25)] backdrop-blur-md">
       <div className="container mx-auto h-full flex justify-between items-center">
