@@ -1,14 +1,26 @@
 import navBar from "@/database/navbar";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Header() {
-  const [navSelected, setNavSelected] = useState("/");
+  const [navSelected, setNavSelected] = useState("");
+
+  function getNav() {
+    if (typeof window !== "undefined") {
+      const nav = localStorage.getItem("@navSelected") || "/";
+      setNavSelected(nav);
+    }
+  }
+  useEffect(() => {
+    getNav();
+  }, []);
 
   return (
     <header className="fixed top-0 left-0 border-box w-full h-20 bg-brand-header border-b border-[rgba(255, 255, 255, 0.25)] backdrop-blur-md">
       <div className="container mx-auto h-full flex justify-between items-center">
-        <h1 className="font-semibold text-2xl tracking-wider ">Diego Guilherme</h1>
+        <h1 className="font-semibold text-2xl tracking-wider ">
+          Diego Guilherme
+        </h1>
         <nav>
           <ul className="flex gap-x-7">
             {navBar.map((nav, index) => (
@@ -20,7 +32,13 @@ export default function Header() {
                     : "bg-transparent hover:scale-125 transition-transform duration-500"
                 }`}
               >
-                <Link href={nav.href} onClick={() => setNavSelected(nav.href)}>
+                <Link
+                  href={nav.href}
+                  onClick={() => {
+                    setNavSelected(nav.href);
+                    localStorage.setItem("@navSelected", nav.href);
+                  }}
+                >
                   {nav.name}
                 </Link>
               </li>
