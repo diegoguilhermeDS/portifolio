@@ -9,14 +9,14 @@ export default function about() {
         <Image
           src={dgImg2}
           alt="diego guilherme image"
-          width="544"
-          height="544"
+          width="444"
+          height="444"
         />
       </section>
-      <section className="w-[566px]">
-        <div>
+      <section className="w-[566px] flex flex-col gap-8">
+        <div className="flex flex-col gap-5">
           <h2 className="text-2xl font-semibold">Sobre min</h2>
-          <p className="text-base font-normal text-brand-200">
+          <p className="text-base font-normal text-brand-200 leading-9 text-justify w-[500px]">
             Desde cedo, fui fascinado por videogames e tecnologia, o que me
             motivou a explorar ainda mais esse universo. Na Kenzie Academy, que
             tive a oportunidade de me aprofundar em desenvolvimento web e dar
@@ -24,17 +24,17 @@ export default function about() {
             Kenzie, pude adquirir conhecimentos sólidos em várias áreas.
           </p>
         </div>
-        <div>
+        <div className="flex flex-col gap-5">
           <h2 className="text-2xl font-semibold">Formação</h2>
-          <div>
+          <div className="flex flex-col gap-2">
             <h3 className="text-lg font-semibold">Desenvolvedor Full Stack</h3>
             <span className="text-base font-normal text-brand-200">Kenzie Academy</span>
             <span className="text-base font-normal text-brand-200">2023</span>
           </div>
         </div>
-        <div>
+        <div className="flex flex-col gap-5">
           <h2 className="text-2xl font-semibold">Experiência</h2>
-          <div>
+          <div className="flex flex-col gap-2">
             <h3 className="text-lg font-semibold">Monitor de ensino</h3>
             <span className="text-base font-normal text-brand-200">Kenzie Academy</span>
             <span className="text-base font-normal text-brand-200">Set/22 - Abr/23</span>
