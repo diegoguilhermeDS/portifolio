@@ -1,8 +1,10 @@
 import Image from "next/image";
 import dgImg from "../../public/assets/dg-img-1.png";
 import dgTextImg from "../../public/assets/{Diego Guilherme}.png";
-import iconDownload from "../../public/assets/icon-download.svg";
 import Button from "@/components/Button";
+import { Source_Code_Pro } from "next/font/google";
+
+const SCP = Source_Code_Pro({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -18,7 +20,31 @@ export default function Home() {
           </h2>
         </div>
         <div>
-          <h3 className="text-brand-100">{"< Back-end em formação />"}</h3>
+          <h3
+            className={`text-brand-100 text-xl font-medium relative ${SCP.className} max-w-max 
+            before:content-[""]
+            before:absolute
+            before:top-0
+            before:right-0
+            before:left-0
+            before:bottom-0
+            before:bg-[#0f0f0f]
+            before:animate-typewrite
+
+            after:content-[""]
+            after:absolute
+            after:top-0
+            after:right-0
+            after:left-0
+            after:bottom-0
+            after:w-[0.125rem]
+            after:bg-brand-100
+            after:animate-cursor
+
+            `}
+          >
+            {"< Back-end em formação /> "}
+          </h3>
         </div>
         <div className="flex flex-col gap-9 items-start">
           <ul className="flex gap-8">
@@ -28,12 +54,20 @@ export default function Home() {
           </ul>
           <Button width="w-[160px]">
             Curriculo
-            <Image
-              src={iconDownload}
-              alt="icon download"
-              width="17"
-              height="17"
-            />
+            <svg
+              width="25"
+              height="30"
+              viewBox="0 0 25 30"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-4"
+            >
+              <path
+                d="M24.2998 10.5709H17.5187V0.399261H7.34702V10.5709H0.565918L12.4328 22.4378L24.2998 10.5709ZM0.565918 25.8284V29.2189H24.2998V25.8284H0.565918Z"
+                fill="white"
+                className="fill-brand-100 group-hover:fill-white group-hover:delay-1000 group-hover:duration-200"
+              />
+            </svg>
           </Button>
         </div>
       </section>
@@ -41,8 +75,8 @@ export default function Home() {
         <Image
           src={dgImg}
           alt="diego guilherme image"
-          width={644}
-          height={644}
+          width={544}
+          height={544}
         />
       </section>
     </main>

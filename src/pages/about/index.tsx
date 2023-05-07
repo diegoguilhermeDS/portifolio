@@ -24,21 +24,23 @@ export default function about() {
             Kenzie, pude adquirir conhecimentos sólidos em várias áreas.
           </p>
         </div>
-        <div className="flex flex-col gap-5">
-          <h2 className="text-2xl font-semibold">Formação</h2>
-          <div className="flex flex-col gap-2">
-            <h3 className="text-lg font-semibold">Desenvolvedor Full Stack</h3>
-            <span className="text-base font-normal text-brand-200">Kenzie Academy</span>
-            <span className="text-base font-normal text-brand-200">2023</span>
+        <div className="flex gap-20">
+          <div className="flex flex-col gap-5">
+            <h2 className="text-2xl font-semibold">Formação</h2>
+            <div className="flex flex-col gap-2">
+              <h3 className="text-lg font-semibold">Desenvolvedor Full Stack</h3>
+              <span className="text-base font-normal text-brand-200">Kenzie Academy</span>
+              <span className="text-base font-normal text-brand-200">2023</span>
+            </div>
           </div>
+          <div className="flex flex-col gap-5">
+            <h2 className="text-2xl font-semibold">Experiência</h2>
+            <div className="flex flex-col gap-2">
+              <h3 className="text-lg font-semibold">Monitor de ensino</h3>
+              <span className="text-base font-normal text-brand-200">Kenzie Academy</span>
+              <span className="text-base font-normal text-brand-200">Set/22 - Abr/23</span>
+            </div>
         </div>
-        <div className="flex flex-col gap-5">
-          <h2 className="text-2xl font-semibold">Experiência</h2>
-          <div className="flex flex-col gap-2">
-            <h3 className="text-lg font-semibold">Monitor de ensino</h3>
-            <span className="text-base font-normal text-brand-200">Kenzie Academy</span>
-            <span className="text-base font-normal text-brand-200">Set/22 - Abr/23</span>
-          </div>
         </div>
       </section>
     </main>
