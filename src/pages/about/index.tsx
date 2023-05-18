@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import dgImg2 from "../../../public/assets/dg-img-2.png";
+import dgImg2 from "../../../public/assets/dg-img-about.png";
 
 export default function about() {
   return (

@@ -1,6 +1,7 @@
 import navBar from "@/database/navbar";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import ButtonCurriculo from "../ButtonCV";
 
 export default function Header() {
   const [navSelected, setNavSelected] = useState("");
@@ -21,7 +22,7 @@ export default function Header() {
         <h1 className="font-semibold text-2xl tracking-wider ">
           Diego Guilherme
         </h1>
-        <nav>
+        <nav className="flex gap-12 items-center">
           <ul className="flex gap-x-7">
             {navBar.map((nav, index) => (
               <li
@@ -44,6 +45,7 @@ export default function Header() {
               </li>
             ))}
           </ul>
+          <ButtonCurriculo />
         </nav>
       </div>
     </header>
