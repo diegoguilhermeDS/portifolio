@@ -13,93 +13,92 @@ import postIcon from "../../public/assets/techs/postgresql.png";
 import gitIcon from "../../public/assets/techs/git.png";
 import nodeIcon from "../../public/assets/techs/node.png";
 import githubIcon from "../../public/assets/techs/github.png";
-import figmaIcon from "../../public/assets/techs/img-figma.png"
+import figmaIcon from "../../public/assets/techs/img-figma.png";
 
-import gmailIcon from "../../public/assets/icons/gmail.png"
-import linkedinIcon from "../../public/assets/icons/linkedin.png"
-import instagramIcon from "../../public/assets/icons/instagram-1.png"
-
+import gmailIcon from "../../public/assets/icons/gmail.png";
+import linkedinIcon from "../../public/assets/icons/linkedin.png";
+import instagramIcon from "../../public/assets/icons/instagram-1.png";
 
 const skillsDb = [
-    {
-      img: htmlIcon,
-      name: "HTML5",  
-    },
-    {
-      img: cssIcon,
-      name: "CSS3",  
-    },
-    {
-      img: jsIcon,
-      name: "Javascript",  
-    },
-    {
-      img: tsIcon,
-      name: "Typescript",  
-    },
-    {
-      img: reactIcon,
-      name: "ReactJs",  
-    },
-    {
-      img: nextIcon,
-      name: "NextJs",  
-    },
-    {
-      img: twIcon,
-      name: "Tailwind",  
-    },
-    {
-      img: scIcon,
-      name: "Styled-c",  
-    },
-    {
-      img: nodeIcon,
-      name: "NodeJs",  
-    },
-    {
-      img: exIcon,
-      name: "Express.js",  
-    },
-    {
-      img: postIcon,
-      name: "Postgresql",  
-    },
-    {
-      img: pyIcon,
-      name: "Python",  
-    },
-    {
-      img: djIcon,
-      name: "Django",  
-    },
-    {
-      img: gitIcon,
-      name: "Git",  
-    }
-]
+  {
+    img: htmlIcon,
+    name: "HTML5",
+  },
+  {
+    img: cssIcon,
+    name: "CSS3",
+  },
+  {
+    img: jsIcon,
+    name: "Javascript",
+  },
+  {
+    img: tsIcon,
+    name: "Typescript",
+  },
+  {
+    img: reactIcon,
+    name: "ReactJs",
+  },
+  {
+    img: nextIcon,
+    name: "NextJs",
+  },
+  {
+    img: twIcon,
+    name: "Tailwind",
+  },
+  {
+    img: scIcon,
+    name: "Styled-c",
+  },
+  {
+    img: nodeIcon,
+    name: "NodeJs",
+  },
+  {
+    img: exIcon,
+    name: "Express.js",
+  },
+  {
+    img: postIcon,
+    name: "Postgresql",
+  },
+  {
+    img: pyIcon,
+    name: "Python",
+  },
+  {
+    img: djIcon,
+    name: "Django",
+  },
+  {
+    img: gitIcon,
+    name: "Git",
+  },
+];
 
 const iconsContactDb = [
   {
     img: linkedinIcon,
     alt: "linkedin",
-    href: "https://www.linkedin.com/in/diegoguilhermeds/"
+    href: "https://www.linkedin.com/in/diegoguilhermeds/",
   },
   {
     img: githubIcon,
     alt: "github",
-    href: "https://github.com/diegoguilhermeDS/"
+    href: "https://github.com/diegoguilhermeDS/",
   },
   {
     img: gmailIcon,
     alt: "gmail",
-    href: "mailto:diegoguilherme752@gmail.com?subject=Olá, Diego! Acessei seu repositório e estou entrando em contato para :"
+    href: "mailto:diegoguilherme752@gmail.com?subject=Olá, Diego! Acessei seu Portfólio e estou entrando em contato para :",
   },
   {
     img: instagramIcon,
     alt: "instagram",
-    href: "https://www.instagram.com/dihguilhermee/"
+    href: "https://www.instagram.com/dihguilhermee/",
   },
-]
+];
 
-export { skillsDb, iconsContactDb}
+export { skillsDb, iconsContactDb };

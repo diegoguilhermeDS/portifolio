@@ -25,8 +25,6 @@ export default function ButtonCV() {
         hover:shadow-neon 
         `}
     >
-      {/* border-2
-        border-brand-100 */}
       <span
         className={`absolute block top-0 -left-1 w-[12%] h-[2px] bg-brand-100 transition-all duration-1000 group-hover:w-[100%]`}
       ></span>

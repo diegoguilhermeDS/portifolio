@@ -27,9 +27,9 @@ export default function Header() {
             {navBar.map((nav, index) => (
               <li
                 key={index}
-                className={`h-6 px-3.5 transition-all duration-700 ${
+                className={`h-8 px-3.5 transition-all duration-700 flex items-center justify-center ${
                   navSelected === nav.href
-                    ? "bg-brand-100 shadow-[0_0_50px_#6C1BED] rounded-lg"
+                    ? "bg-brand-100 shadow-[0_0_50px_#6C1BED] rounded-md"
                     : "bg-transparent hover:scale-125 transition-transform duration-500"
                 }`}
               >
