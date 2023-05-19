@@ -19,64 +19,108 @@ import gmailIcon from "../../public/assets/icons/gmail.png";
 import linkedinIcon from "../../public/assets/icons/linkedin.png";
 import instagramIcon from "../../public/assets/icons/instagram-1.png";
 
-const skillsDb = [
-  {
-    img: htmlIcon,
-    name: "HTML5",
-  },
-  {
-    img: cssIcon,
-    name: "CSS3",
-  },
-  {
-    img: jsIcon,
-    name: "Javascript",
-  },
-  {
-    img: tsIcon,
-    name: "Typescript",
-  },
-  {
-    img: reactIcon,
-    name: "ReactJs",
-  },
-  {
-    img: nextIcon,
-    name: "NextJs",
-  },
-  {
-    img: twIcon,
-    name: "Tailwind",
-  },
-  {
-    img: scIcon,
-    name: "Styled-c",
-  },
-  {
-    img: nodeIcon,
-    name: "NodeJs",
-  },
-  {
-    img: exIcon,
-    name: "Express.js",
-  },
-  {
-    img: postIcon,
-    name: "Postgresql",
-  },
-  {
-    img: pyIcon,
-    name: "Python",
-  },
-  {
-    img: djIcon,
-    name: "Django",
-  },
-  {
-    img: gitIcon,
-    name: "Git",
-  },
-];
+const skillsDb = {
+  techs: [
+    {
+      img: htmlIcon,
+      name: "HTML5",
+      progress: 98,
+      indexColor: 0,
+    },
+    {
+      img: cssIcon,
+      name: "CSS3",
+      progress: 98,
+      indexColor: 1,
+    },
+    {
+      img: jsIcon,
+      name: "Javascript",
+      progress: 98,
+      indexColor: 2,
+    },
+    {
+      img: tsIcon,
+      name: "Typescript",
+      progress: 98,
+      indexColor: 3,
+    },
+    {
+      img: reactIcon,
+      name: "ReactJs",
+      progress: 98,
+      indexColor: 4,
+    },
+    {
+      img: nextIcon,
+      name: "NextJs",
+      progress: 98,
+      indexColor: 5,
+    },
+    {
+      img: twIcon,
+      name: "Tailwind",
+      progress: 98,
+      indexColor: 6,
+    },
+    {
+      img: scIcon,
+      name: "Styled-c",
+      progress: 98,
+      indexColor: 7,
+    },
+    {
+      img: nodeIcon,
+      name: "NodeJs",
+      progress: 98,
+      indexColor: 8,
+    },
+    {
+      img: exIcon,
+      name: "Express.js",
+      progress: 98,
+      indexColor: 9,
+    },
+    {
+      img: postIcon,
+      name: "Postgresql",
+      progress: 98,
+      indexColor: 10,
+    },
+    {
+      img: pyIcon,
+      name: "Python",
+      progress: 98,
+      indexColor: 11,
+    },
+    {
+      img: djIcon,
+      name: "Django",
+      progress: 98,
+      indexColor: 12,
+    },
+  ],
+  tools: [
+    {
+      img: githubIcon,
+      name: "GitHub",
+      progress: 98,
+      indexColor: 13,
+    },
+    {
+      img: gitIcon,
+      name: "Git",
+      progress: 98,
+      indexColor: 14,
+    },
+    {
+      img: figmaIcon,
+      name: "Figma",
+      progress: 98,
+      indexColor: 15,
+    },
+  ]
+};
 
 const iconsContactDb = [
   {
