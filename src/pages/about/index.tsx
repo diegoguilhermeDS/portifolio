@@ -13,7 +13,7 @@ export default function about() {
           height="444"
         />
       </section>
-      <section className="w-full flex flex-col gap-12 md:gap-8">
+      <section className="w-full max-w-[566px] flex flex-col gap-12 md:gap-8">
         <div className="flex flex-col gap-5">
           <h2 className="text-2xl font-semibold">Sobre min</h2>
           <p className="text-base font-normal text-brand-200 leading-9 text-justify max-w-[500px] w-full">
