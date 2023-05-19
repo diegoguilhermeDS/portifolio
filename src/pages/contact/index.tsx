@@ -67,10 +67,14 @@ export default function contact() {
             Envie-me uma mensagem
           </h1>
           <span className="font-normal text-sm text-brand-400">
-            preencha o formulário abaixo e me envie uma mensagem no whatsapp
+            preencha o formulário abaixo e me envie uma mensagem no email
           </span>
         </div>
-        <form action="" className="flex flex-col gap-3 w-full">
+        <form action="https://formsubmit.co/diegoguilherme752@outlook.com" method="POST" className="flex flex-col gap-3 w-full">
+          <input type="hidden" name="_next" value="http://localhost:3000/contact"></input>
+          <input type="hidden" name="_autoresponse" value="Recebi sua mensagem, obrigado pelo contato e logo responderei!"></input>
+          <input type="hidden" name="_template" value="box"></input>
+          <input type="hidden" name="_captcha" value="false"></input>
           <Input type="text" id="name" placeholder="Name" />
           <Input type="Email" id="email" placeholder="E-mail" />
           <Input type="text" id="subject" placeholder="Assunto" />
