@@ -1,20 +1,21 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import navBar from "@/database/navbar";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import ButtonCurriculo from "../ButtonCV";
+import { useRouter } from "next/router";
 
 export default function Header() {
   const [navSelected, setNavSelected] = useState("");
 
+  const params = useRouter();
+
   function getNav() {
-    if (typeof window !== "undefined") {
-      const nav = localStorage.getItem("@navSelected") || "/";
-      setNavSelected(nav);
-    }
+    setNavSelected(params.asPath);
   }
   useEffect(() => {
     getNav();
-  }, []);
+  }, [params]);
 
   return (
     <header className="fixed top-0 left-0 border-box w-full h-20 bg-brand-header border-b border-[rgba(255, 255, 255, 0.25)] backdrop-blur-md">
@@ -35,10 +36,6 @@ export default function Header() {
               >
                 <Link
                   href={nav.href}
-                  onClick={() => {
-                    setNavSelected(nav.href);
-                    localStorage.setItem("@navSelected", nav.href);
-                  }}
                 >
                   {nav.name}
                 </Link>
