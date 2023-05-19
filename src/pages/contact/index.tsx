@@ -7,7 +7,7 @@ import Button from "@/components/Button";
 
 export default function contact() {
   return (
-    <main className="flex flex-col items-center gap-12 container overflow-hidden p-2 pt-10 mx-auto min-h-screen mt-16 lg:flex-row lg:justify-around lg:items-start lg:pt-24">
+    <main className="flex flex-col items-center gap-12 container overflow-hidden p-2 pt-24 mx-auto min-h-screen mt-16 lg:flex-row lg:justify-around lg:items-start lg:mt-0">
       <section className="flex flex-col gap-10 items-center w-[100%] p-4 rounded-xl bg-brand-300 shadow-card lg:max-w-[450px] lg:py-6 lg:gap-12">
         <div className="w-[100%] lg:max-w-[388px] h-[40%] rounded-3xl overflow-hidden md:rounded-[46px] lg:rounded-3xl">
           <Image
