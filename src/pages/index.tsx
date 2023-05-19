@@ -1,8 +1,8 @@
 import Image from "next/image";
-import dgImg from "../../public/assets/dg-img-1.png";
-import dgTextImg from "../../public/assets/{Diego Guilherme}.png";
-import Button from "@/components/Button";
+import dgImg from "../../public/assets/dg-img-home.png";
+import dgTextImg from "../../public/assets/{diego-guilherme}.png";
 import { Source_Code_Pro } from "next/font/google";
+import ButtonCurriculo from "@/components/ButtonCV";
 
 const SCP = Source_Code_Pro({ subsets: ["latin"] });
 
@@ -52,23 +52,6 @@ export default function Home() {
             <li>github</li>
             <li>email</li>
           </ul>
-          <Button width="w-[160px]">
-            Curriculo
-            <svg
-              width="25"
-              height="30"
-              viewBox="0 0 25 30"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-4"
-            >
-              <path
-                d="M24.2998 10.5709H17.5187V0.399261H7.34702V10.5709H0.565918L12.4328 22.4378L24.2998 10.5709ZM0.565918 25.8284V29.2189H24.2998V25.8284H0.565918Z"
-                fill="white"
-                className="fill-brand-100 group-hover:fill-white group-hover:delay-1000 group-hover:duration-200"
-              />
-            </svg>
-          </Button>
         </div>
       </section>
       <section>
