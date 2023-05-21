@@ -2,7 +2,7 @@
 import navBar from "@/database/navbar";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import ButtonCurriculo from "../ButtonCV";
+import ButtonCurriculo from "../Button/ButtonCV";
 import { useRouter } from "next/router";
 
 export default function Header() {

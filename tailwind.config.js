@@ -15,7 +15,9 @@ module.exports = {
           300: "#151515",
           400: "#777777",
           500: "#0F0F0F",
-          600: "#939393"
+          600: "#939393",
+          700: "#212121",
+          modal: "#151515D1"
         },
       },
       boxShadow: {
@@ -23,6 +25,7 @@ module.exports = {
         card: "0px 0px 30px rgba(102, 96, 96, 0.25);",
         input: "1px 4px 2px -3px rgba(0, 0, 0, 0.7) inset, -1px -3px 3px -2px rgba(255, 255, 255, 0.2) inset;",
         button: "0px 0px 27px #6C1BED;",
+        selector: "inset -1px -2px 2px -3px #FFFFFF",
         html:  "0px 0px 10px #151515, 0px 0px 40px #FC490B, 0px 0px 80px #FC490B",
         css:  "0px 0px 10px #151515, 0px 0px 40px #2196F3, 0px 0px 80px #2196F3",
         js:  "0px 0px 10px #151515, 0px 0px 40px #F7DF1E, 0px 0px 80px #F7DF1E",
