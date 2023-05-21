@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { skillsDb } from "@/database/skills.db";
-import CardSkill from "@/components/CardSkill";
+import CardSkill from "@/components/Card/CardSkill";
 
 export default function skills() {
   return (
