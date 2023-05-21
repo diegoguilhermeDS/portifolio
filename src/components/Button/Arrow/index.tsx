@@ -32,7 +32,7 @@ const Arrow = ({
     <button
       className={`flex items-center justify-center w-[50px] h-[50px] rounded-full bg-brand-700 shadow-card cursor-pointer hover:scale-110 transition-transform ease-in-out duration-500 ${
         rotate && "rotate-180"
-      }`}
+      } hidden lg:flex`}
       onClick={handleProjectEmphasis}
     >
       <Image src={imgArrow} alt="icone da seta" />

@@ -64,7 +64,7 @@ const CardSkill = ({ skill, size }: iCardSkillProps) => {
           className="saturate-0 brightness-50"
         />
         <div
-          className={`absolute -z-10 -bottom-6 -right-5 flex items-center justify-center w-16 h-16 rounded-full border-[3.75px] font-bold text-xs transition ease-in-out duration-500 ${
+          className={`absolute -z-5 -bottom-6 -right-5 flex items-center justify-center w-16 h-16 rounded-full border-[3.75px] font-bold text-xs transition ease-in-out duration-500 ${
             colorVariants[skill.indexColor]
           } ${shadowVariants[skill.indexColor]} ${font.className} `}
         >{`${skill.progress}%`}</div>

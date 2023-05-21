@@ -15,27 +15,27 @@ interface iModalProps {
 const Modal = ({ repository, setIsOpenModal }: iModalProps) => {
   return (
     <div className="fixed top-0 left-0 w-full h-screen flex items-center justify-center bg-brand-modal" onClick={() => setIsOpenModal(false)}>
-      <div className="flex items-center gap-6 w-[775px] h-[410px] px-9 rounded-2xl bg-brand-300 shadow-card relative">
+      <div className="flex flex-col lg:flex-row items-center gap-6 w-[90%] lg:w-[775px] h-[410px] py-5 lg:py-0 px-9 rounded-2xl bg-brand-300 shadow-card relative animate-modal">
         <ButtonClose setIsOpenModal={setIsOpenModal} />
-        <div className="w-[380px] h-[280px] overflow-hidden rounded-xl">
+        <div className="w-full h-[200px] lg:w-[380px] lg:h-[280px] overflow-hidden rounded-xl">
           <Image
             src={repository.img!}
             alt="imagem do projeto"
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="flex flex-col gap-16">
+        <div className="flex flex-col gap-4 lg:gap-16">
           <div className="flex flex-col gap-4 h-[127px] w-[300px]">
             <h2 className="font-bold text-xl tracking-wide text-center">
               {repository.name}
             </h2>
-            <p className="font-light text-xs text-justify text">
+            <p className="font-light text-[10px] lg:text-xs text-justify text">
               {repository.description}
             </p>
           </div>
 
           {/* container informations */}
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-2 lg:gap-5">
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-2">
                 <div className="w-[16px] h-[16px] overflow-hidden">

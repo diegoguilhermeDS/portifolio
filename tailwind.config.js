@@ -53,7 +53,9 @@ module.exports = {
           "typewrite 6s steps(27) forwards, blink 500ms steps(27) infinite",
         fadeInLeft: "fadeInLeft 2s ease 4s forwards",
         menu: "menuAnimation 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both",
-        closeMenu: "closeMenuAnimation 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both",
+        closeMenu:
+          "closeMenuAnimation 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both",
+        modal: "slideModal 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both"
       },
       keyframes: {
         typewrite: {
@@ -75,7 +77,7 @@ module.exports = {
         menuAnimation: {
           from: {
             left: "-100%",
-            opacity: 0
+            opacity: 0,
           },
           to: {
             left: "0px",
@@ -86,6 +88,18 @@ module.exports = {
           to: {
             left: "-100%",
             opacity: 0,
+          },
+        },
+        slideModal: {
+          from: {
+            transform: "translateY(-600px) rotateX(-30deg) scale(0)",
+            transformOrigin: "50% 100%",
+            opacity: 0,
+          },
+          to: {
+            transform: "translateY(0) rotateX(0) scale(1)",
+            transformOrigin: "50% 1400px",
+            opacity: 1,
           },
         },
       },
