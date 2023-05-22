@@ -1,197 +1,91 @@
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
+import React, { useState } from "react";
 import { api } from "@/services/api";
-import { iProjectPageProps, iRepository } from "./types";
+import { iProjectPageProps, iRepository, iRepositoryRequest } from "./types";
 
-import imgProject from "../../../public/assets/img/image 1.png";
-import Button from "@/components/Button";
+import CardProject from "@/components/Card/CardProject";
+import Arrow from "@/components/Button/Arrow";
+import ThreeDots from "@/components/ThreeDots";
+import { RepoDbImgs } from "@/database/repoImgs";
+import CardEmphasis from "@/components/Card/CardEmphasis";
 
 export async function getStaticProps() {
   const data: iRepository[] = await api
     .get("diegoguilhermeDS/repos")
-    .then((res) => res.data)
+    .then((res) =>
+      res.data.map((repo: iRepositoryRequest) => {
+        const img = RepoDbImgs.find((repoDb) => repoDb.name == repo.name)!.img;
+        const newRepo: iRepository = { ...repo, img };
+
+        return newRepo;
+      })
+    )
     .catch((err) => console.log(err));
+
+  const emphasisProjects = ["nu-kenzie", "hamburgueria-da-kenzie", "portifolio"]
+  const dataEmphasis = data.filter((repo: iRepository) => {
+    if (emphasisProjects.includes(repo.name)) {
+      return repo;
+    }
+  });
 
   return {
     props: {
-      repositories: data,
+      repositories: data.sort((a, b) => {
+        if(a.created_at > b.created_at){
+          return -1
+        } else {
+          return 1
+        }
+      }),
+      repositoriesEmphasis: dataEmphasis.sort(
+        (a: iRepository, b: iRepository) =>
+          new Date(a.updated_at).getTime() - new Date(b.updated_at).getTime()
+      ),
     },
   };
 }
 
-export default function Project({ repositories }: iProjectPageProps) {
-  const [featuredProjects, setFeaturedProjects] = useState<iRepository[]>([]);
-
-  /* useEffect(() => {
-    (() => {
-
-    })()
-  }, []) */
+export default function Project({
+  repositories,
+  repositoriesEmphasis,
+}: iProjectPageProps) {
+  const [featuredProjects, setFeaturedProjects] = useState<
+    iRepositoryRequest[]
+  >([]);
+  const [idProjectEmphasis, setIdProjectEmphasis] = useState(0);
 
   return (
-    <main className="flex flex-col gap-32 container min-h-screen mx-auto pt-32 border-l-orange-500">
-      <section className="flex justify-center">
-        <div className="flex gap-8 max-w-[820px] w-full p-4 py-8 bg-brand-300 shadow-card">
-          <Image
-            src={imgProject}
-            alt="imagem do projeto"
-            width={460}
-            height={100}
+    <main className="flex flex-col gap-32 container min-h-screen mx-auto pt-32 pb-10 border-l-orange-500 overflow-hidden">
+      <section className="flex flex-col items-center gap-6">
+        <div className="flex items-center lg:justify-center gap-16 w-[94%] lg:w-full">
+          <Arrow
+            idProjectEmphasis={idProjectEmphasis}
+            setIdProjectEmphasis={setIdProjectEmphasis}
           />
-          <div className="flex flex-col gap-6 max-w-[300px]">
-            <h1 className="font-bold text-xl tracking-wide">Nome do projeto</h1>
-            <p className="font-normal text-xs text-brand-200 text-justify">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod
-              repudiandae, corrupti atque perferendis id magni dolorem! Sunt
-              atque totam quis, reiciendis neque provident necessitatibus
-              voluptatem quasi pariatur, distinctio inventore ipsum?
-            </p>
-            <p className="font-normal text-xs text-brand-200 text-justify">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod
-              repudiandae, corrupti atque perferendis id magni dolorem! Sunt
-              atque totam quis, reiciendis neque provident necessitatibus
-              voluptatem quasi pariatur, distinctio inventore ipsum?
-            </p>
-            <div className="flex mt-10">
-              <Button heigth={38}>ver projeto</Button>
-              <button>ver mais</button>
-            </div>
-          </div>
+          <CardEmphasis
+            repositoryEmphasis={repositoriesEmphasis[idProjectEmphasis]}
+          />
+          <Arrow
+            rotate={true}
+            idProjectEmphasis={idProjectEmphasis}
+            setIdProjectEmphasis={setIdProjectEmphasis}
+          />
         </div>
+        <ThreeDots
+          idProjectEmphasis={idProjectEmphasis}
+          setIdProjectEmphasis={setIdProjectEmphasis}
+        />
       </section>
       <section>
-        <ul className="grid grid-cols-3 justify-items-center gap-y-10 bg-green-200">
-          <li className="flex flex-col gap-7 max-w-[370px] px-4 py-4 bg-brand-300 rounded-3xl shadow-card">
-            <div className="max-w-[340px] overflow-hidden">
-              <Image
-                src={imgProject}
-                alt="imagem do projeto"
-                width={340}
-                height={100}
-              />
-            </div>
-            <div className="flex justify-between items-center">
-              <h2 className="font-semibold text-[28px] tracking-wide">
-                Nu Kenzie
-              </h2>
-              <button
-                className="font-normal text-base text-brand-600 tracking-wide transition-colors ease-in duration-300 hover:text-white"
-                onClick={() => alert("pegando")}
-              >
-                ver mais
-              </button>
-            </div>
-          </li>
-          <li className="flex flex-col gap-7 max-w-[370px] px-4 py-4 bg-brand-300 rounded-3xl shadow-card">
-            <div className="max-w-[340px] overflow-hidden">
-              <Image
-                src={imgProject}
-                alt="imagem do projeto"
-                width={340}
-                height={100}
-              />
-            </div>
-            <div className="flex justify-between items-center">
-              <h2 className="font-semibold text-[28px] tracking-wide">
-                Nu Kenzie
-              </h2>
-              <button
-                className="font-normal text-base text-brand-600 tracking-wide transition-colors ease-in duration-300 hover:text-white"
-                onClick={() => alert("pegando")}
-              >
-                ver mais
-              </button>
-            </div>
-          </li>
-          <li className="flex flex-col gap-7 max-w-[370px] px-4 py-4 bg-brand-300 rounded-3xl shadow-card">
-            <div className="max-w-[340px] overflow-hidden">
-              <Image
-                src={imgProject}
-                alt="imagem do projeto"
-                width={340}
-                height={100}
-              />
-            </div>
-            <div className="flex justify-between items-center">
-              <h2 className="font-semibold text-[28px] tracking-wide">
-                Nu Kenzie
-              </h2>
-              <button
-                className="font-normal text-base text-brand-600 tracking-wide transition-colors ease-in duration-300 hover:text-white"
-                onClick={() => alert("pegando")}
-              >
-                ver mais
-              </button>
-            </div>
-          </li>
-          <li className="flex flex-col gap-7 max-w-[370px] px-4 py-4 bg-brand-300 rounded-3xl shadow-card">
-            <div className="max-w-[340px] overflow-hidden">
-              <Image
-                src={imgProject}
-                alt="imagem do projeto"
-                width={340}
-                height={100}
-              />
-            </div>
-            <div className="flex justify-between items-center">
-              <h2 className="font-semibold text-[28px] tracking-wide">
-                Nu Kenzie
-              </h2>
-              <button
-                className="font-normal text-base text-brand-600 tracking-wide transition-colors ease-in duration-300 hover:text-white"
-                onClick={() => alert("pegando")}
-              >
-                ver mais
-              </button>
-            </div>
-          </li>
-          <li className="flex flex-col gap-7 max-w-[370px] px-4 py-4 bg-brand-300 rounded-3xl shadow-card">
-            <div className="max-w-[340px] overflow-hidden">
-              <Image
-                src={imgProject}
-                alt="imagem do projeto"
-                width={340}
-                height={100}
-              />
-            </div>
-            <div className="flex justify-between items-center">
-              <h2 className="font-semibold text-[28px] tracking-wide">
-                Nu Kenzie
-              </h2>
-              <button
-                className="font-normal text-base text-brand-600 tracking-wide transition-colors ease-in duration-300 hover:text-white"
-                onClick={() => alert("pegando")}
-              >
-                ver mais
-              </button>
-            </div>
-          </li>
-          <li className="flex flex-col gap-7 max-w-[370px] px-4 py-4 bg-brand-300 rounded-3xl shadow-card">
-            <div className="max-w-[340px] overflow-hidden">
-              <Image
-                src={imgProject}
-                alt="imagem do projeto"
-                width={340}
-                height={100}
-              />
-            </div>
-            <div className="flex justify-between items-center">
-              <h2 className="font-semibold text-[28px] tracking-wide">
-                Nu Kenzie
-              </h2>
-              <button
-                className="font-normal text-base text-brand-600 tracking-wide transition-colors ease-in duration-300 hover:text-white"
-                onClick={() => alert("pegando")}
-              >
-                ver mais
-              </button>
-            </div>
-          </li>
+        <ul className="grid grid-rows-1 grid-flow-col lg:grid-flow-dense overflow-x-auto lg:grid-cols-3 justify-items-center gap-y-10 gap-x-10 py-10">
+          {repositories.map(
+            (repo: iRepository) =>
+              repo.name != "diegoguilhermeDS" && (
+                <CardProject key={repo.id} repository={repo} />
+              )
+          )}
         </ul>
       </section>
-      {/* {repositories.map((rep: iRepository, index: number) => (
-        <p key={index}>{rep.name}</p>
-      ))} */}
     </main>
   );
 }
