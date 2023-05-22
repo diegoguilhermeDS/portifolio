@@ -1,8 +1,8 @@
 import Image from "next/image";
-import React, { Dispatch, useState } from "react";
+import React, { useState } from "react";
 
-import { iRepository } from "@/pages/project/types";
 import Modal from "../../Modal";
+import { iRepository } from "@/pages/project";
 
 interface iCardProjectProps {
   repository: iRepository;

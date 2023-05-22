@@ -1,6 +1,7 @@
 import Button from "@/components/Button";
 import Modal from "@/components/Modal";
-import { iRepository } from "@/pages/project/types";
+import { iRepository } from "@/pages/project";
+
 import Image from "next/image";
 import React, { Dispatch, useState } from "react";
 

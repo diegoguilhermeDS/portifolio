@@ -1,4 +1,3 @@
-import { iRepository } from "@/pages/project/types";
 import Image from "next/image";
 import React, { Dispatch } from "react";
 
@@ -6,6 +5,7 @@ import tagsIcon from "../../../public/assets/icons/content-code.png";
 import externalLinkIcon from "../../../public/assets/icons/external-link.png";
 import githubIcon from "../../../public/assets/icons/github-p.png";
 import ButtonClose from "../Button/Close";
+import { iRepository } from "@/pages/project";
 
 interface iModalProps {
   repository: iRepository;
