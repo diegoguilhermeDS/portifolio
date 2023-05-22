@@ -14,7 +14,15 @@ interface iModalProps {
 
 const Modal = ({ repository, setIsOpenModal }: iModalProps) => {
   return (
-    <div id="container-modal" className="fixed top-0 left-0 w-full h-screen flex items-center justify-center bg-brand-modal" onClick={(e) => e.target.id == "container-modal" && setIsOpenModal(false)}>
+    <div
+      id="container-modal"
+      className="fixed top-0 left-0 w-full h-screen flex items-center justify-center bg-brand-modal"
+      onClick={(e) => {
+        const target = e.target as HTMLTextAreaElement;
+
+        return target.id == "container-modal" && setIsOpenModal(false);
+      }}
+    >
       <div className="flex flex-col lg:flex-row items-center gap-6 w-[90%] lg:w-[775px] h-[410px] py-5 lg:py-0 px-9 rounded-2xl bg-brand-300 shadow-card relative animate-modal">
         <ButtonClose setIsOpenModal={setIsOpenModal} />
         <div className="w-full h-[200px] lg:w-[380px] lg:h-[280px] overflow-hidden rounded-xl">
