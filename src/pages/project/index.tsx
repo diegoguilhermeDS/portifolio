@@ -30,7 +30,13 @@ export async function getStaticProps() {
 
   return {
     props: {
-      repositories: data,
+      repositories: data.sort((a, b) => {
+        if(a.created_at > b.created_at){
+          return -1
+        } else {
+          return 1
+        }
+      }),
       repositoriesEmphasis: dataEmphasis.sort(
         (a: iRepository, b: iRepository) =>
           new Date(a.updated_at).getTime() - new Date(b.updated_at).getTime()

@@ -15,7 +15,7 @@ const CardProject = ({ repository }: iCardProjectProps) => {
 
   return (
     <>
-      <li className="flex flex-col gap-7 max-w-[370px] w-[300px]  px-4 py-4 bg-brand-300 rounded-3xl shadow-card transition-all ease-linear duration-300 hover:bg-brand-500">
+      <li className="flex flex-col gap-7 max-w-[370px] w-[300px] lg:w-full  px-4 py-4 bg-brand-300 rounded-3xl shadow-card transition-all ease-linear duration-300 hover:bg-brand-500">
         <div className="max-w-[340px] h-[205px] overflow-hidden  rounded-3xl md:rounded-[46px] lg:rounded-3xl">
           <Image
             src={repository.img!}

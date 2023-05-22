@@ -28,7 +28,7 @@ const CardEmphasis = ({ repositoryEmphasis }: iCardEmphasisProps) => {
           {repositoryEmphasis.description}
         </p>
         <div className="flex mt-10 gap-16">
-          <a href={repositoryEmphasis.homepage!}>
+          <a href={repositoryEmphasis.homepage!} target="_blank">
             <Button heigth={38} width={129}>
               ver projeto
             </Button>

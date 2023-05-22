@@ -1,15 +1,22 @@
-import eCommerce from "../../public/assets/img-contact.png";
-import notFoundImg from "../../public/assets/img/image 1.png"
-import msdtImg from "../../public/assets/img/screen-shot-mother-s-day-tribute.png"
+import notFoundImg from "../../public/assets/img/not-img.png"
+import msdtImg from "../../public/assets/img/mother-s-day-tribute.png"
+import nuKenzieImg from "../../public/assets/img/nu-kenzie.png"
+import burguerKenzieImg from "../../public/assets/img/burguer kenzie.png"
+import gitSearchImg from "../../public/assets/img/git-search.png"
+import kenzieFlixImg from "../../public/assets/img/kenzie-flix.png"
+import kenzieHubImg from "../../public/assets/img/kenzie-hub.png"
+import meaPetzImg from "../../public/assets/img/mea-petz.png"
+import apiImg from "../../public/assets/img/api.png"
+
 
 export const RepoDbImgs = [
   {
     name: "api-kimoveis",
-    img: notFoundImg,
+    img: apiImg,
   },
   {
     name: "api_portifolio",
-    img: notFoundImg,
+    img: apiImg,
   },
   {
     name: "carrinho-de-compras",
@@ -25,7 +32,7 @@ export const RepoDbImgs = [
   },
   {
     name: "e-commerce",
-    img: eCommerce,
+    img: notFoundImg,
   },
   {
     name: "ecommerce-ju-store",
@@ -37,19 +44,19 @@ export const RepoDbImgs = [
   },
   {
     name: "git-search",
-    img: notFoundImg,
+    img: gitSearchImg,
   },
   {
     name: "hamburgueria-da-kenzie",
-    img: notFoundImg,
+    img: burguerKenzieImg,
   },
   {
     name: "kenzie-hub",
-    img: notFoundImg,
+    img: kenzieHubImg,
   },
   {
     name: "kenzieflix",
-    img: notFoundImg,
+    img: kenzieFlixImg,
   },
   {
     name: "living",
@@ -61,7 +68,7 @@ export const RepoDbImgs = [
   },
   {
     name: "m2-projeto-em-equipe-MeaPetz",
-    img: notFoundImg,
+    img: meaPetzImg,
   },
   {
     name: "meet-devs",
@@ -77,7 +84,7 @@ export const RepoDbImgs = [
   },
   {
     name: "nu-kenzie",
-    img: notFoundImg,
+    img: nuKenzieImg,
   },
   {
     name: "pagina-login",
