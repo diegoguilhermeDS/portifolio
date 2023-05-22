@@ -3,7 +3,7 @@ import React from "react";
 export default function ButtonCV() {
 
   return (
-    <a href={"https://drive.google.com/file/d/1khe3pDHMNIxIVpUMd2rOawBvuSpcCd4z/view?usp=sharing"} target="_blank">
+    <a href={"https://drive.google.com/file/d/1nakRmqjhuXIkjRe3aCj_eS7S17xI6b2q/view?usp=share_link"} target="_blank">
       <button
         className={`
           group
