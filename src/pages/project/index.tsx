@@ -7,6 +7,8 @@ import ThreeDots from "@/components/ThreeDots";
 import { RepoDbImgs } from "@/database/repoImgs";
 import CardEmphasis from "@/components/Card/CardEmphasis";
 
+import notFoundImg from "../../../public/assets/img/not-img.png"
+
 import { StaticImageData } from "next/image";
 
 export interface iRepositoryRequest {
@@ -37,20 +39,18 @@ export interface iProjectPageProps {
 
 
 export async function getStaticProps() {
-  const data: iRepository[] = await api
-    .get("diegoguilhermeDS/repos")
-    .then((res) =>
-      res.data.map((repo: iRepositoryRequest) => {
-        const img = RepoDbImgs.find((repoDb) => repoDb.name == repo.name)!.img;
-        const newRepo: iRepository = { ...repo, img };
+  const { data } = await api.get("diegoguilhermeDS/repos")
+  const newDataRepos = data.map((repo: iRepositoryRequest) => {
+    const findImg = RepoDbImgs.find((repoDb) => repoDb.name == repo.name)
+    const img = findImg ? findImg.img : notFoundImg
+    const newRepo: iRepository = { ...repo, img };
 
-        return newRepo;
-      })
-    )
-    .catch((err) => console.log(err));
+    return newRepo;
+  })
 
   const emphasisProjects = ["nu-kenzie", "hamburgueria-da-kenzie", "portifolio"]
-  const dataEmphasis = data.filter((repo: iRepository) => {
+  const dataEmphasis = newDataRepos.filter((repo: iRepository) => {
+    console.log(repo)
     if (emphasisProjects.includes(repo.name)) {
       return repo;
     }
@@ -58,7 +58,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      repositories: data.sort((a, b) => {
+      repositories: newDataRepos.sort((a: iRepository, b: iRepository) => {
         if(a.created_at > b.created_at){
           return -1
         } else {
@@ -75,7 +75,7 @@ export async function getStaticProps() {
 
 export default function Project({
   repositories,
-  repositoriesEmphasis,
+  repositoriesEmphasis ,
 }: iProjectPageProps) {
   const [featuredProjects, setFeaturedProjects] = useState<
     iRepositoryRequest[]
