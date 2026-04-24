@@ -1,28 +1,13 @@
-import clientPromise from "@/src/lib/mongodb"
-import { NextResponse } from "next/server"
-
+import { errorResponse, successResponse } from "@/src/lib/api-response"
+import { getProjects } from "@/src/services/server/project.service"
 
 export async function GET() {
   try {
-    const client = await clientPromise
-    const db = client.db("portifolio")
-
-    const projects = await db
-      .collection("projects")
-      .find({})
-      .sort({ createdAt: -1 })
-      .toArray()
-
-    return NextResponse.json({ success: true, data: projects })
+    const projects =  await getProjects()
+    return successResponse(projects)
   } catch (error) {
-    console.error("MongoDB connection error:", error)
+    console.error("MongoDB connection error: ", error)
 
-    return NextResponse.json(
-      {
-        success: false,
-        error: "Failed to fetch projects.",
-      },
-      { status: 500 },
-    )
+    return errorResponse("Failed to fetch projects.")
   }
 }

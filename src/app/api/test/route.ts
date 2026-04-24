@@ -1,6 +1,8 @@
 import clientPromise from "@/src/lib/mongodb"
 import { NextResponse } from "next/server"
 
+export const runtime = "nodejs"
+
 export async function GET() {
   const client = await clientPromise
   const db = client.db("portifolio")
