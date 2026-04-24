@@ -18,4 +18,4 @@ export const project = projectSchema.extend({
     id: z.string()
 })
 
-export type Project = z.infer<typeof projectSchema>;
+export type Project = z.infer<typeof project>;
